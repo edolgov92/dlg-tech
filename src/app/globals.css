@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts}";
+@plugin "../../hero";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
