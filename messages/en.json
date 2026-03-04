@@ -4,69 +4,28 @@
     "description": "14 years of experience. US standards. Managed execution. Silicon Valley quality architecture at rational rates."
   },
   "header": {
-    "howItWorks": "How It Works",
-    "stack": "Tech Stack",
-    "team": "Team",
     "cta": "Book Intro Call"
   },
   "hero": {
-    "titleLine1": "Senior Architect-Led",
-    "titleLine2": "Engineering Team.",
-    "subtitle": "14 years of experience. US standards. Managed execution.",
-    "description": "I handle the architecture and quality. My vetted team handles the code. You get Silicon Valley results at rational rates.",
-    "cta": "Book Intro Call",
-    "ctaSecondary": "See How It Works",
+    "available": "Available for new projects",
+    "titleLine1": "Senior",
+    "titleLine2": "Architect-Led",
+    "titleLine3": "Engineering.",
+    "subtitle": "I handle the architecture and quality. My vetted team handles the code. You get Silicon Valley results at rational rates.",
+    "cta": "Book Intro Call"
+  },
+  "vision": {
+    "title": "Silicon Valley Quality.",
+    "titleLine2": "Rational Rates.",
+    "subtitle": "14 years of experience across US and European tech. One architect. One team. Zero compromises on quality.",
+    "cta": "Start a Conversation",
+    "note": "Free 30-minute consultation",
     "statsExperience": "14+",
-    "statsExperienceLabel": "Years Experience",
+    "statsExperienceLabel": "Years",
     "statsReview": "100%",
     "statsReviewLabel": "Code Review",
     "statsRate": "$45–50",
     "statsRateLabel": "Per Hour"
-  },
-  "trustBattery": {
-    "label": "Trusted by teams building with"
-  },
-  "howItWorks": {
-    "badge": "The Process",
-    "title": "How It Works",
-    "subtitle": "A proven model that eliminates the risks of outsourcing. You deal with one person — your architect.",
-    "step1Label": "01",
-    "step1Title": "Architecture & Oversight",
-    "step1Description": "Eugene designs the system architecture, defines technical specs, and translates your business requirements into actionable engineering tasks.",
-    "step2Label": "02",
-    "step2Title": "Deep Work",
-    "step2Description": "Vetted Senior Engineers build the core. Silent, focused execution by professionals with 5–10+ years of experience.",
-    "step3Label": "03",
-    "step3Title": "Quality Gate",
-    "step3Description": "Every pull request is reviewed by Eugene before it hits production. Zero compromises on code quality."
-  },
-  "techStack": {
-    "badge": "Technology",
-    "title": "Tech Stack",
-    "subtitle": "Modern, battle-tested technologies for every layer of your product.",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "cloud": "Cloud & DevOps",
-    "ai": "AI & ML"
-  },
-  "team": {
-    "badge": "The People",
-    "title": "The Team",
-    "subtitle": "A handpicked squad of senior engineers, led by a US-based architect.",
-    "leadName": "Eugene Dolgov",
-    "leadRole": "Senior Solutions Architect",
-    "leadBio": "14+ years of experience across US and European tech companies. Your single point of contact — perfect English, US time zone overlap, architect-level technical depth.",
-    "experience": "14+ Years Exp",
-    "codeReview": "100% Code Review",
-    "timezone": "US Time Zones",
-    "teamTitle": "Engineering Squad",
-    "teamDescription": "Vetted senior and middle+ engineers from Eastern Europe. Each with 5–10+ years in fintech, healthtech, and SaaS."
-  },
-  "cta": {
-    "title": "Ready to Build?",
-    "subtitle": "Get Silicon Valley quality architecture at rational rates. Let's discuss your project.",
-    "button": "Book Intro Call",
-    "note": "Free 30-minute consultation. No commitment required."
   },
   "footer": {
     "tagline": "Senior Architect-Led Engineering.",
