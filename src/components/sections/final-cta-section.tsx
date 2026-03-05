@@ -80,7 +80,7 @@ export function FinalCTASection() {
             href="mailto:hello@dlgtech.com"
             size="lg"
             radius="full"
-            className="border-2 border-white/40 bg-transparent px-8 font-medium text-white hover:bg-white/10"
+            className="border-2 border-white/40 bg-transparent px-10 font-semibold text-white hover:bg-white/10"
           >
             {t("secondaryCta")}
           </Button>

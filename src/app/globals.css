@@ -92,6 +92,35 @@
   }
 }
 
+/* Legal pages prose styling */
+.legal-prose h2 {
+  @apply mt-10 mb-4 text-xl font-semibold text-white;
+}
+
+.legal-prose h3 {
+  @apply mt-8 mb-3 text-base font-semibold text-white/90;
+}
+
+.legal-prose p {
+  @apply mb-4 text-sm leading-relaxed text-white/55;
+}
+
+.legal-prose ul {
+  @apply mb-4 ml-5 list-disc space-y-1.5;
+}
+
+.legal-prose li {
+  @apply text-sm leading-relaxed text-white/55;
+}
+
+.legal-prose a {
+  @apply text-white/70 underline underline-offset-2 transition-colors hover:text-white;
+}
+
+.legal-prose strong {
+  @apply font-semibold text-white/70;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

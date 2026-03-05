@@ -123,7 +123,12 @@
     "note": "Free consultation · No commitment · Response within 24 hours"
   },
   "footer": {
-    "tagline": "Architect-founded engineering.",
+    "tagline": "Architect-founded engineering team. Real technical oversight, startup-friendly rates.",
+    "contactTitle": "Get in touch",
+    "bookCall": "Book an intro call",
+    "legalTitle": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
     "copyright": "© {year} DLG Tech. All rights reserved."
   }
 }

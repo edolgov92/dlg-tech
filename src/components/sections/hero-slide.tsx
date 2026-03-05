@@ -54,7 +54,7 @@ export function HeroSlide() {
       ref={sectionRef}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20 md:px-0 md:py-0"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10 md:px-0 md:py-0"
     >
       {/* Aurora background — each layer is a distinct color tone, cross-faded via opacity */}
       <div className="pointer-events-none absolute inset-0">
@@ -129,7 +129,7 @@ export function HeroSlide() {
           style={{ transition: "transform 0.3s ease-out" }}
         >
           <div
-            className="relative mx-auto aspect-[3/5] sm:aspect-[3/4] md:aspect-[16/10]"
+            className="relative mx-auto aspect-[3/5] max-h-[calc(100svh-6rem)] sm:aspect-[3/4] md:aspect-[16/10] md:max-h-none"
             style={{ transform: `rotateZ(${TILT_Z}deg)` }}
           >
             {/* Mobile: simple cover image */}
@@ -184,19 +184,19 @@ export function HeroSlide() {
                 className="leading-[1.1] tracking-[-0.03em]"
                 style={{ animation: "fade-in-up 1.2s cubic-bezier(0.21,0.47,0.32,0.98) 0.5s both" }}
               >
-                <span className="block text-[clamp(1.8rem,5.5vw,4.5rem)] font-bold text-white">
+                <span className="block text-[clamp(2rem,6vw,4.5rem)] font-bold text-white">
                   {t("titleLine1")}
                 </span>
-                <span className="block text-[clamp(2.2rem,7vw,6rem)] font-bold text-white">
+                <span className="block text-[clamp(2.5rem,8vw,6rem)] font-bold text-white">
                   {t("titleLine2")}
                 </span>
-                <span className="block text-[clamp(3rem,10vw,9rem)] font-bold tracking-[-0.06em] bg-gradient-to-r from-amber-200 via-orange-200 to-amber-400/70 bg-clip-text text-transparent">
+                <span className="block text-[clamp(3.5rem,12vw,9rem)] font-bold tracking-[-0.06em] bg-gradient-to-r from-amber-200 via-orange-200 to-amber-400/70 bg-clip-text text-transparent">
                   {t("titleLine3")}
                 </span>
               </h1>
 
               <p
-                className="mt-4 max-w-xs text-[clamp(0.8rem,1.4vw,1.05rem)] leading-relaxed text-white/80 sm:mt-5 sm:max-w-lg"
+                className="mt-4 max-w-xs text-[clamp(0.95rem,1.5vw,1.05rem)] leading-relaxed text-white/80 sm:mt-5 sm:max-w-lg"
                 style={{ animation: "fade-in 1s ease 1s both" }}
               >
                 {t("subtitle")}
