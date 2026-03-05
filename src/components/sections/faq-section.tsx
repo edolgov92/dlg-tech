@@ -11,29 +11,40 @@ function AccordionItem({
   answer,
   open,
   onToggle,
+  id,
 }: {
   question: string;
   answer: string;
   open: boolean;
   onToggle: () => void;
+  id: string;
 }) {
   const contentRef = useRef<HTMLDivElement>(null);
+  const answerId = `${id}-answer`;
 
   return (
     <div className="border-b border-white/[0.06]">
-      <button
-        onClick={onToggle}
-        className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-white"
-      >
-        <span className="text-sm font-medium text-white/80 sm:text-base">
-          {question}
-        </span>
-        <ChevronDown
-          className={`h-4 w-4 shrink-0 text-white/40 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-        />
-      </button>
+      <h3>
+        <button
+          onClick={onToggle}
+          aria-expanded={open}
+          aria-controls={answerId}
+          className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-white"
+        >
+          <span className="text-sm font-medium text-white/80 sm:text-base">
+            {question}
+          </span>
+          <ChevronDown
+            aria-hidden="true"
+            className={`h-4 w-4 shrink-0 text-white/40 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          />
+        </button>
+      </h3>
       <div
         ref={contentRef}
+        id={answerId}
+        role="region"
+        aria-labelledby={id}
         className="grid transition-[grid-template-rows] duration-300"
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
@@ -77,6 +88,8 @@ export function FAQSection() {
   return (
     <section
       ref={sectionRef}
+      id="faq"
+      aria-labelledby="faq-heading"
       className="relative overflow-hidden px-6 py-24 sm:py-32"
     >
       {/* Background image + gradient overlay */}
@@ -115,7 +128,7 @@ export function FAQSection() {
             <p className="mb-4 text-[11px] tracking-[0.25em] text-white/50 uppercase sm:text-xs">
               {t("badge")}
             </p>
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
+            <h2 id="faq-heading" className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
               {t("title")}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/50 sm:text-lg">
@@ -128,6 +141,7 @@ export function FAQSection() {
             {FAQ_KEYS.map((key, i) => (
               <AccordionItem
                 key={key}
+                id={key}
                 question={t(`${key}Q`)}
                 answer={t(`${key}A`)}
                 open={openIndex === i}

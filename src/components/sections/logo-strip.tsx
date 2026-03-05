@@ -67,7 +67,7 @@ export function LogoStrip() {
   const t = useTranslations("logos");
 
   return (
-    <section className="relative z-10 border-y border-white/[0.04] bg-black/40 py-10 backdrop-blur-sm">
+    <section id="logos" aria-label="Companies our engineers worked at" className="relative z-10 border-y border-white/[0.04] bg-black/40 py-10 backdrop-blur-sm">
       <div className="mx-auto max-w-5xl px-6">
         <p className="mb-8 text-center text-xs tracking-[0.2em] text-white/25 uppercase">
           {t("heading")}

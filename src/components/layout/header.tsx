@@ -20,6 +20,7 @@ export function Header() {
 
   return (
     <header
+      role="banner"
       className="fixed top-0 z-50 w-full transition-[background-color,backdrop-filter] duration-300"
       style={{
         backgroundColor: scrolled ? "rgba(0, 0, 0, 0.5)" : "transparent",
@@ -27,10 +28,10 @@ export function Header() {
         WebkitBackdropFilter: scrolled ? "blur(12px)" : "none",
       }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-16">
-        <span className="text-sm font-semibold tracking-tight text-foreground/80">
+      <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-16">
+        <a href="/" className="text-sm font-semibold tracking-tight text-foreground/80">
           DLG Tech
-        </span>
+        </a>
         <Button
           as="a"
           href="#contact"
@@ -40,7 +41,7 @@ export function Header() {
         >
           {t("cta")}
         </Button>
-      </div>
+      </nav>
     </header>
   );
 }

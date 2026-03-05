@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="March 4, 2026">
+    <LegalLayout title="Privacy Policy" lastUpdated="March 4, 2026" path="/privacy">
       <p>
         This Privacy Policy explains how{" "}
         <strong>Evgenii Dolgov PR Novi Sad</strong>, operating as{" "}

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <LegalLayout title="Terms of Service" lastUpdated="March 4, 2026">
+    <LegalLayout title="Terms of Service" lastUpdated="March 4, 2026" path="/terms">
       <p>
         These Terms of Service (&quot;Terms&quot;) govern your access to and use
         of the website at{" "}

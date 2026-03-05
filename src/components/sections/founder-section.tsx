@@ -42,6 +42,7 @@ export function FounderSection() {
     <section
       ref={sectionRef}
       id="contact"
+      aria-labelledby="founder-heading"
       className="relative overflow-hidden px-6 py-24 sm:py-32"
     >
       {/* Ambient background — warm gradient + subtle texture */}
@@ -83,7 +84,7 @@ export function FounderSection() {
         <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left — Text */}
           <div>
-            <h2 className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
+            <h2 id="founder-heading" className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
               {t("name")}
             </h2>
             <p className="mt-1 text-sm font-medium tracking-wide text-white/40 sm:text-base">

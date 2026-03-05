@@ -29,6 +29,8 @@ export function FinalCTASection() {
   return (
     <section
       ref={sectionRef}
+      id="cta"
+      aria-labelledby="cta-heading"
       className="relative overflow-hidden px-6 py-28 sm:py-36"
     >
       {/* Gradient background */}
@@ -55,7 +57,7 @@ export function FinalCTASection() {
             "opacity 1s cubic-bezier(0.21,0.47,0.32,0.98), transform 1s cubic-bezier(0.21,0.47,0.32,0.98)",
         }}
       >
-        <h2 className="text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
+        <h2 id="cta-heading" className="text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl lg:text-6xl">
           {t("title")}
         </h2>
         <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60 sm:text-lg">
@@ -77,7 +79,7 @@ export function FinalCTASection() {
           </Button>
           <Button
             as="a"
-            href="mailto:hello@dlgtech.com"
+            href="mailto:contact@dlgtech.com"
             size="lg"
             radius="full"
             className="border-2 border-white/40 bg-transparent px-10 font-semibold text-white hover:bg-white/10"

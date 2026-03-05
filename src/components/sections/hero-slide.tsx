@@ -2,6 +2,7 @@
 
 import { useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
 
@@ -54,10 +55,12 @@ export function HeroSlide() {
       ref={sectionRef}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
+      id="hero"
+      aria-label="Hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10 md:px-0 md:py-0"
     >
       {/* Aurora background — each layer is a distinct color tone, cross-faded via opacity */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         {/* Deep red */}
         <div
           className="absolute inset-0"
@@ -134,10 +137,13 @@ export function HeroSlide() {
           >
             {/* Mobile: simple cover image */}
             {PHOTO_SRC && (
-              <img
+              <Image
                 src={PHOTO_SRC}
-                alt=""
-                className="absolute inset-0 h-full w-full rounded-[14px] object-cover md:hidden"
+                alt="DLG Tech engineering team"
+                fill
+                priority
+                sizes="100vw"
+                className="rounded-[14px] object-cover md:hidden"
               />
             )}
 

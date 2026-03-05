@@ -34,6 +34,8 @@ export function ProcessSection() {
   return (
     <section
       ref={sectionRef}
+      id="process"
+      aria-labelledby="process-heading"
       className="relative overflow-hidden px-6 py-24 sm:py-32"
     >
       {/* Background image + warm overlay */}
@@ -70,7 +72,7 @@ export function ProcessSection() {
           <p className="mb-4 text-[11px] tracking-[0.25em] text-white/50 uppercase sm:text-xs">
             {t("badge")}
           </p>
-          <h2 className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
+          <h2 id="process-heading" className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
             {t("title")}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-white/60 sm:text-lg">

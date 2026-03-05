@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const TEAM = [
   {
@@ -71,6 +72,8 @@ export function TeamSection() {
   return (
     <section
       ref={sectionRef}
+      id="team"
+      aria-labelledby="team-heading"
       className="relative overflow-hidden px-6 py-24 sm:py-32"
       style={{
         background: `
@@ -95,7 +98,7 @@ export function TeamSection() {
           <p className="mb-4 text-[11px] tracking-[0.25em] text-white/50 uppercase sm:text-xs">
             {t("badge")}
           </p>
-          <h2 className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
+          <h2 id="team-heading" className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
             {t("title")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
@@ -116,11 +119,12 @@ export function TeamSection() {
               }}
             >
               <div className="relative mx-auto mb-4 h-24 w-24 overflow-hidden rounded-2xl border border-white/[0.06] sm:h-28 sm:w-28">
-                <img
+                <Image
                   src={member.photo}
                   alt={t(member.nameKey)}
-                  className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
-                  loading="lazy"
+                  fill
+                  sizes="(min-width: 640px) 112px, 96px"
+                  className="object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
@@ -140,9 +144,9 @@ export function TeamSection() {
 
         {/* Technologies */}
         <div className="mx-auto mt-20 max-w-3xl">
-          <p className="mb-8 text-center text-[11px] tracking-[0.25em] text-white/60 uppercase sm:text-xs">
+          <h3 className="mb-8 text-center text-[11px] tracking-[0.25em] text-white/60 uppercase sm:text-xs">
             {t("techTitle")}
-          </p>
+          </h3>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {TECH_CATEGORIES.map((cat) => (
               <div

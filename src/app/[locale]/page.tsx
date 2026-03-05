@@ -8,10 +8,18 @@ import { ProcessSection } from "@/components/sections/process-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+import { JsonLd } from "@/components/seo/json-ld";
 
-export default function LandingPage() {
+export default async function LandingPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <>
+      <JsonLd locale={locale} />
       <Header />
       <main>
         <HeroSlide />

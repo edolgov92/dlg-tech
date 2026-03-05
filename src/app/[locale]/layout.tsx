@@ -14,18 +14,27 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
 
+  const title = t("title");
+  const description = t("description");
+
   return {
-    title: t("title"),
-    description: t("description"),
+    title,
+    description,
+    alternates: {
+      canonical: locale === "en" ? "/" : `/${locale}`,
+    },
     openGraph: {
-      title: t("title"),
-      description: t("description"),
+      title,
+      description,
       type: "website",
+      url: locale === "en" ? "/" : `/${locale}`,
+      siteName: "DLG Tech",
+      locale: locale === "en" ? "en_US" : locale,
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
+      title,
+      description,
     },
   };
 }

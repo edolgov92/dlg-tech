@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { Star } from "lucide-react";
 
 const TESTIMONIALS = [
@@ -43,6 +44,8 @@ export function TestimonialsSection() {
   return (
     <section
       ref={sectionRef}
+      id="testimonials"
+      aria-labelledby="testimonials-heading"
       className="relative overflow-hidden px-6 py-24 sm:py-32"
     >
       {/* Warm peach/salmon gradient — inspired by Blue Yard */}
@@ -74,7 +77,7 @@ export function TestimonialsSection() {
           <p className="mb-4 text-[11px] tracking-[0.25em] text-white/50 uppercase sm:text-xs">
             {t("badge")}
           </p>
-          <h2 className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
+          <h2 id="testimonials-heading" className="text-3xl font-bold leading-tight tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">
             {t("title")}
           </h2>
         </div>
@@ -82,7 +85,7 @@ export function TestimonialsSection() {
         {/* Testimonial cards — staggered layout */}
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {TESTIMONIALS.map(({ key, photo }, i) => (
-            <div
+            <figure
               key={key}
               className="relative rounded-2xl border border-white/[0.06] bg-white/[0.03] p-7 backdrop-blur-sm"
               style={{
@@ -93,28 +96,27 @@ export function TestimonialsSection() {
                 transition: `opacity 0.7s ease ${0.2 + i * 0.15}s, transform 0.7s ease ${0.2 + i * 0.15}s`,
               }}
             >
-              {/* Stars */}
-              <div className="mb-4 flex gap-1">
+              <div className="mb-4 flex gap-1" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, s) => (
                   <Star
                     key={s}
                     className="h-3.5 w-3.5 fill-amber-400 text-amber-400"
+                    aria-hidden="true"
                   />
                 ))}
               </div>
 
-              {/* Quote */}
               <blockquote className="text-sm leading-relaxed text-white/70">
-                &ldquo;{t(`${key}Quote`)}&rdquo;
+                <p>&ldquo;{t(`${key}Quote`)}&rdquo;</p>
               </blockquote>
 
-              {/* Author */}
-              <div className="mt-6 flex items-center gap-3">
-                <img
+              <figcaption className="mt-6 flex items-center gap-3">
+                <Image
                   src={photo}
-                  alt={t(`${key}Name`)}
-                  className="h-10 w-10 rounded-full object-cover grayscale"
-                  loading="lazy"
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover grayscale"
                 />
                 <div>
                   <p className="text-sm font-semibold text-white/80">
@@ -124,8 +126,8 @@ export function TestimonialsSection() {
                     {t(`${key}Role`)}
                   </p>
                 </div>
-              </div>
-            </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
