@@ -117,7 +117,7 @@ export function VisionSlide() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, ease }}
-          className="font-display text-4xl font-bold leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl"
+          className="text-4xl font-bold leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:text-6xl xl:text-7xl"
         >
           <span className="block bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent">
             {t("title")}

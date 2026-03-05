@@ -171,7 +171,7 @@ export function HeroSlide() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 1.2, ease }}
-                className="font-display text-[clamp(2.2rem,8vw,7rem)] font-bold leading-[0.9] tracking-[-0.04em]"
+                className="text-[clamp(2.2rem,8vw,7rem)] font-bold leading-[0.9] tracking-[-0.045em]"
               >
                 <span className="block text-white">{t("titleLine1")}</span>
                 <span className="block text-white">{t("titleLine2")}</span>
