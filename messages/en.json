@@ -1,34 +1,129 @@
 {
   "metadata": {
-    "title": "DLG Tech — Senior Architect-Led Engineering Team",
-    "description": "14 years of experience. US standards. Managed execution. Silicon Valley quality architecture at rational rates."
+    "title": "DLG Tech — Architect-Founded Engineering Team",
+    "description": "Your next CTO doesn't need equity. Architect-founded engineering team with real technical oversight and startup-friendly rates."
   },
   "header": {
     "cta": "Book Intro Call"
   },
   "hero": {
     "available": "Available for new projects",
-    "titleLine1": "Senior",
-    "titleLine2": "Architect-Led",
-    "titleLine3": "Engineering.",
-    "subtitle": "I handle the architecture and quality. My vetted team handles the code. You get Silicon Valley results at rational rates.",
+    "titleLine1": "Your next CTO",
+    "titleLine2": "doesn't need",
+    "titleLine3": "equity.",
+    "subtitle": "Most IT agencies put a salesman between you and the code. We're an architect-founded 100% engineering team — real technical oversight, enforced standards, and rates that won't kill your runway.",
+    "proof": "14+ years architecting products for startups across the US and Europe.",
     "cta": "Book Intro Call"
   },
-  "vision": {
-    "title": "Silicon Valley Quality.",
-    "titleLine2": "Rational Rates.",
-    "subtitle": "14 years of experience across US and European tech. One architect. One team. Zero compromises on quality.",
+  "logos": {
+    "heading": "Our engineers built systems at"
+  },
+  "founder": {
+    "badge": "The person behind DLG Tech",
+    "name": "Eugene Dolgov",
+    "role": "Tech Lead & Software Architect",
+    "bio": "I've spent 14+ years building products for startups across the US and Europe. I've worked inside platforms like Crossover — I know exactly what you get, and what you overpay for.",
+    "point1title": "Not another agency",
+    "point1text": "Most agencies are run by business people who find cheap developers and mark them up. I'm an architect who builds real teams with real standards.",
+    "point2title": "You pay for engineering, not overhead",
+    "point2text": "No project managers pretending to be tech leads. No juniors presented as seniors. Every developer on your project is vetted and trained by me personally.",
+    "point3title": "Architecture-first approach",
+    "point3text": "I design the system right from day one — so you don't burn money rewriting code six months later. Then my team executes under my ongoing technical oversight.",
     "cta": "Start a Conversation",
-    "note": "Free 30-minute consultation",
+    "note": "Free 30-minute intro call",
     "statsExperience": "14+",
-    "statsExperienceLabel": "Years",
-    "statsReview": "100%",
-    "statsReviewLabel": "Code Review",
-    "statsRate": "$45–50",
-    "statsRateLabel": "Per Hour"
+    "statsExperienceLabel": "Years experience",
+    "statsMarkets": "EU & US",
+    "statsMarketsLabel": "Happy customers",
+    "statsRate": "2–3x",
+    "statsRateLabel": "Less than US rates"
+  },
+  "team": {
+    "badge": "The team",
+    "title": "Engineers, not outsourcers.",
+    "subtitle": "Every developer on your project is hand-picked, trained, and technically supervised. No random freelancers. No juniors in disguise.",
+    "member1Name": "Alex K.",
+    "member1Role": "Senior Frontend",
+    "member1Status": "On a project",
+    "member2Name": "Maria S.",
+    "member2Role": "Full-Stack Engineer",
+    "member2Status": "On a project",
+    "member3Name": "Dmitry P.",
+    "member3Role": "Backend Engineer",
+    "member3Status": "Available",
+    "member4Name": "Anna V.",
+    "member4Role": "Frontend Engineer",
+    "member4Status": "Available",
+    "member5Name": "Pavel R.",
+    "member5Role": "DevOps Engineer",
+    "member5Status": "Available",
+    "techTitle": "Technologies we work with",
+    "frontendLabel": "Frontend",
+    "backendLabel": "Backend",
+    "cloudLabel": "Cloud & DevOps"
+  },
+  "process": {
+    "badge": "How we work",
+    "title": "Flexible by design.",
+    "subtitle": "Every startup is different. We adapt to what you actually need — not force you into a one-size-fits-all model.",
+    "model1Title": "Full Delivery",
+    "model1Desc": "You describe what you need. We architect, build, and deliver — end to end. You stay focused on your business while we handle the engineering.",
+    "model1Point1": "Complete project ownership from architecture to deployment",
+    "model1Point2": "Regular demos and progress updates",
+    "model1Point3": "Fixed scope or time-and-materials — your choice",
+    "model1Fit": "Best for: Founders without a tech team",
+    "model2Title": "Dedicated Team",
+    "model2Desc": "Your own engineering team, managed and technically supervised by us. Sprint-based workflow with full transparency into what's being built.",
+    "model2Point1": "Dedicated developers working exclusively on your product",
+    "model2Point2": "Sprint planning, daily standups, weekly demos",
+    "model2Point3": "Scale up or down as your needs change",
+    "model2Fit": "Best for: Startups with ongoing development",
+    "model3Title": "Team Extension",
+    "model3Desc": "Our engineers join your existing team seamlessly. Same tools, same workflow, same standups — just more hands on deck.",
+    "model3Point1": "Engineers integrate into your processes and tools",
+    "model3Point2": "Work alongside your team as if they were hired directly",
+    "model3Point3": "Billing through us — no HR or legal overhead for you",
+    "model3Fit": "Best for: Companies that need to scale fast"
+  },
+  "testimonials": {
+    "badge": "What founders say",
+    "title": "Trusted by founders who've been burned before.",
+    "t1Quote": "We went through two agencies before finding DLG Tech. Night and day difference. Eugene actually understands architecture — our codebase is clean, scalable, and the team ships fast.",
+    "t1Name": "James Mitchell",
+    "t1Role": "CEO, Fintech Startup — San Francisco",
+    "t2Quote": "What sold me was the transparency. No hidden juniors, no surprise invoices. I know exactly who's working on my product and the code quality is consistently high.",
+    "t2Name": "Sarah Chen",
+    "t2Role": "Founder, HealthTech — New York",
+    "t3Quote": "They integrated into our existing team so smoothly that our investors thought we'd hired full-time. The architecture-first approach saved us months of technical debt.",
+    "t3Name": "David Park",
+    "t3Role": "CTO, SaaS Platform — Austin"
+  },
+  "faq": {
+    "badge": "Common questions",
+    "title": "Got questions? We've got answers.",
+    "subtitle": "Everything founders typically ask before working with us.",
+    "faq1Q": "What timezone do you work in?",
+    "faq1A": "Our team works with significant overlap with US business hours (EST/PST). We're available for standups, Slack, and real-time collaboration during your workday. Async communication is handled within hours, not days.",
+    "faq2Q": "How do you ensure code quality?",
+    "faq2A": "Every pull request goes through code review. The architecture is designed upfront by a senior architect, and we enforce coding standards, automated testing, and CI/CD pipelines from day one. No shortcuts.",
+    "faq3Q": "What if I'm not happy with a developer?",
+    "faq3A": "We'll replace them — no questions asked. Our commitment is to the quality of work delivered, not to any individual. That said, because we vet and train our engineers personally, this rarely happens.",
+    "faq4Q": "How does pricing work?",
+    "faq4A": "We offer both hourly and fixed-price models depending on the project. Rates are 2-3x less than equivalent US talent. No hidden fees, no surprise invoices. You get a clear breakdown before we start.",
+    "faq5Q": "Can I talk directly to the developers?",
+    "faq5A": "Absolutely. There's no communication layer between you and the team. You'll have direct access via Slack, daily standups, or whatever tools you prefer. We believe in zero-overhead communication.",
+    "faq6Q": "How fast can you start?",
+    "faq6A": "Typically within 1-2 weeks of our initial call. We scope the project, align on architecture, and assign the right engineers. For team extensions, we can move even faster if we have available engineers."
+  },
+  "finalCta": {
+    "title": "Ready to build something great?",
+    "subtitle": "Book a free 30-minute call. No pitch decks, no sales pressure — just a conversation between engineers about what you're building.",
+    "primaryCta": "Book Intro Call",
+    "secondaryCta": "Send us an email",
+    "note": "Free consultation · No commitment · Response within 24 hours"
   },
   "footer": {
-    "tagline": "Senior Architect-Led Engineering.",
+    "tagline": "Architect-founded engineering.",
     "copyright": "© {year} DLG Tech. All rights reserved."
   }
 }

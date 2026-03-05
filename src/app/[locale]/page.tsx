@@ -1,7 +1,13 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { HeroSlide } from "@/components/sections/hero-slide";
-import { VisionSlide } from "@/components/sections/vision-slide";
+import { LogoStrip } from "@/components/sections/logo-strip";
+import { FounderSection } from "@/components/sections/founder-section";
+import { TeamSection } from "@/components/sections/team-section";
+import { ProcessSection } from "@/components/sections/process-section";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { FAQSection } from "@/components/sections/faq-section";
+import { FinalCTASection } from "@/components/sections/final-cta-section";
 
 export default function LandingPage() {
   return (
@@ -9,7 +15,13 @@ export default function LandingPage() {
       <Header />
       <main>
         <HeroSlide />
-        <VisionSlide />
+        <LogoStrip />
+        <FounderSection />
+        <TeamSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </>

@@ -21,7 +21,7 @@ const strips = Array.from({ length: STRIPS }, (_, i) => {
     width: `${w + 0.5}%`,
     transform: `rotateY(${angle.toFixed(2)}deg)`,
     backgroundPosition: `${(t * 100).toFixed(1)}% center`,
-    backgroundSize: `${STRIPS * 100}% 100%`,
+    backgroundSize: `${STRIPS * 100}% auto`,
   };
 });
 
@@ -54,7 +54,7 @@ export function HeroSlide() {
       ref={sectionRef}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-20 md:px-0 md:py-0"
     >
       {/* Aurora background — each layer is a distinct color tone, cross-faded via opacity */}
       <div className="pointer-events-none absolute inset-0">
@@ -102,14 +102,14 @@ export function HeroSlide() {
 
       {/* Drifting fog accents — transform-only, blur computed once */}
       <div
-        className="pointer-events-none absolute -right-[5%] top-[5%] h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle,rgba(100,60,180,0.07),transparent_60%)] blur-[100px]"
+        className="pointer-events-none absolute -right-[5%] top-[5%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(100,60,180,0.07),transparent_60%)] blur-[100px] sm:h-[800px] sm:w-[800px]"
         style={{
           animation: "fog-drift-1 20s ease-in-out infinite",
           willChange: "transform",
         }}
       />
       <div
-        className="pointer-events-none absolute -bottom-[10%] -left-[5%] h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(40,80,120,0.05),transparent_60%)] blur-[80px]"
+        className="pointer-events-none absolute -bottom-[10%] -left-[5%] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(40,80,120,0.05),transparent_60%)] blur-[80px] sm:h-[600px] sm:w-[600px]"
         style={{
           animation: "fog-drift-2 25s ease-in-out infinite",
           willChange: "transform",
@@ -118,7 +118,7 @@ export function HeroSlide() {
 
       {/* Curved photo — entrance via CSS, mouse tilt via CSS transition */}
       <div
-        className="relative z-10 w-[92vw] max-w-[1100px]"
+        className="relative z-10 w-full max-w-[1100px] md:w-[92vw]"
         style={{
           perspective: "1000px",
           animation: "hero-card-in 1.6s cubic-bezier(0.21,0.47,0.32,0.98) both",
@@ -129,42 +129,51 @@ export function HeroSlide() {
           style={{ transition: "transform 0.3s ease-out" }}
         >
           <div
-            className="relative mx-auto aspect-[16/10]"
+            className="relative mx-auto aspect-[3/5] sm:aspect-[3/4] md:aspect-[16/10]"
             style={{ transform: `rotateZ(${TILT_Z}deg)` }}
           >
-            {/* Strips */}
+            {/* Mobile: simple cover image */}
+            {PHOTO_SRC && (
+              <img
+                src={PHOTO_SRC}
+                alt=""
+                className="absolute inset-0 h-full w-full rounded-[14px] object-cover md:hidden"
+              />
+            )}
+
+            {/* Desktop: curved strips */}
             <div
-              className="absolute inset-0 overflow-hidden rounded-[20px]"
+              className="absolute inset-0 hidden overflow-hidden rounded-[20px] md:block"
               style={{ transformStyle: "preserve-3d" }}
             >
               {strips.map((s, i) => (
                 <div
                   key={i}
-                  className="absolute top-0 h-full bg-cover"
+                  className="absolute top-0 h-full"
                   style={{
                     left: s.left,
                     width: s.width,
                     transform: s.transform,
                     backgroundImage: bgImage,
                     backgroundPosition: s.backgroundPosition,
-                    backgroundSize: s.backgroundSize,
+                    backgroundSize: `${STRIPS * 100}% 100%`,
                   }}
                 />
               ))}
             </div>
 
             {/* Photo darkening for text contrast */}
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[20px] bg-black/40" />
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[20px] bg-[radial-gradient(ellipse_at_40%_45%,transparent_10%,rgba(0,0,0,0.35)_100%)]" />
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[20px] bg-gradient-to-b from-black/20 via-transparent to-black/40" />
+            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] bg-black/40 md:rounded-[20px]" />
+            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] bg-[radial-gradient(ellipse_at_40%_45%,transparent_10%,rgba(0,0,0,0.35)_100%)] md:rounded-[20px]" />
+            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] bg-gradient-to-b from-black/20 via-transparent to-black/40 md:rounded-[20px]" />
 
             {/* Paper edge */}
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[20px] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" />
+            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] md:rounded-[20px]" />
 
             {/* Text overlay */}
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center sm:px-12">
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-5 text-center sm:px-12">
               <span
-                className="mb-4 inline-flex items-center gap-2 text-[10px] tracking-[0.25em] text-white/50 uppercase sm:text-[11px]"
+                className="mb-4 inline-flex items-center gap-2 text-[10px] tracking-[0.25em] text-white/70 uppercase sm:text-[11px]"
                 style={{ animation: "fade-in 1s ease 0.8s both" }}
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
@@ -172,33 +181,44 @@ export function HeroSlide() {
               </span>
 
               <h1
-                className="text-[clamp(2.2rem,8vw,7rem)] font-bold leading-[1.15] tracking-[-0.045em]"
+                className="leading-[1.1] tracking-[-0.03em]"
                 style={{ animation: "fade-in-up 1.2s cubic-bezier(0.21,0.47,0.32,0.98) 0.5s both" }}
               >
-                <span className="block text-white">{t("titleLine1")}</span>
-                <span className="block text-white">{t("titleLine2")}</span>
-                <span className="block bg-gradient-to-r from-amber-200 via-orange-200 to-amber-400/70 bg-clip-text text-transparent">
+                <span className="block text-[clamp(1.8rem,5.5vw,4.5rem)] font-bold text-white">
+                  {t("titleLine1")}
+                </span>
+                <span className="block text-[clamp(2.2rem,7vw,6rem)] font-bold text-white">
+                  {t("titleLine2")}
+                </span>
+                <span className="block text-[clamp(3rem,10vw,9rem)] font-bold tracking-[-0.06em] bg-gradient-to-r from-amber-200 via-orange-200 to-amber-400/70 bg-clip-text text-transparent">
                   {t("titleLine3")}
                 </span>
               </h1>
 
               <p
-                className="mt-5 max-w-sm text-[clamp(0.8rem,1.4vw,1.05rem)] leading-relaxed text-white sm:max-w-md"
+                className="mt-4 max-w-xs text-[clamp(0.8rem,1.4vw,1.05rem)] leading-relaxed text-white/80 sm:mt-5 sm:max-w-lg"
                 style={{ animation: "fade-in 1s ease 1s both" }}
               >
                 {t("subtitle")}
               </p>
 
+              <p
+                className="mt-3 hidden text-[clamp(0.7rem,1.1vw,0.85rem)] font-medium tracking-wide text-white/60 sm:block"
+                style={{ animation: "fade-in 1s ease 1.3s both" }}
+              >
+                {t("proof")}
+              </p>
+
               <div
-                className="mt-7"
-                style={{ animation: "fade-in-up-sm 0.8s cubic-bezier(0.21,0.47,0.32,0.98) 1.2s both" }}
+                className="mt-5 sm:mt-7"
+                style={{ animation: "fade-in-up-sm 0.8s cubic-bezier(0.21,0.47,0.32,0.98) 1.5s both" }}
               >
                 <Button
                   as="a"
                   href="#contact"
                   size="lg"
                   radius="full"
-                  className="border border-white/15 bg-white/10 px-8 font-medium text-white backdrop-blur-xl hover:bg-white/15"
+                  className="border border-white/15 bg-white/10 px-6 text-sm font-medium text-white backdrop-blur-xl hover:bg-white/15 sm:px-8 sm:text-base"
                   endContent={<ArrowRight className="h-4 w-4" />}
                 >
                   {t("cta")}
@@ -209,7 +229,7 @@ export function HeroSlide() {
 
           {/* Ground shadow */}
           <div
-            className="mx-auto mt-4 h-6 w-[70%] rounded-[50%] bg-black/30 blur-2xl"
+            className="mx-auto mt-4 hidden h-6 w-[70%] rounded-[50%] bg-black/30 blur-2xl md:block"
             style={{ transform: `rotateZ(${TILT_Z}deg)` }}
           />
         </div>
