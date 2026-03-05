@@ -1,12 +1,6 @@
 "use client";
 
-import { useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
@@ -36,84 +30,93 @@ const PLACEHOLDER_GRADIENT =
 
 export function HeroSlide() {
   const t = useTranslations("hero");
-  const ref = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const cfg = { stiffness: 60, damping: 30 };
-  const rx = useSpring(useTransform(my, [-0.5, 0.5], [3, -3]), cfg);
-  const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-4, 4]), cfg);
+  const onMove = useCallback((e: React.MouseEvent) => {
+    const r = sectionRef.current?.getBoundingClientRect();
+    const el = cardRef.current;
+    if (!r || !el) return;
+    const mx = (e.clientX - r.left) / r.width - 0.5;
+    const my = (e.clientY - r.top) / r.height - 0.5;
+    el.style.transform = `rotateX(${(my * -6).toFixed(2)}deg) rotateY(${(mx * 8).toFixed(2)}deg)`;
+  }, []);
 
-  function onMove(e: React.MouseEvent) {
-    const r = ref.current?.getBoundingClientRect();
-    if (!r) return;
-    mx.set((e.clientX - r.left) / r.width - 0.5);
-    my.set((e.clientY - r.top) / r.height - 0.5);
-  }
-  function onLeave() {
-    mx.set(0);
-    my.set(0);
-  }
+  const onLeave = useCallback(() => {
+    const el = cardRef.current;
+    if (el) el.style.transform = "rotateX(0deg) rotateY(0deg)";
+  }, []);
 
   const bgImage = PHOTO_SRC ? `url('${PHOTO_SRC}')` : PLACEHOLDER_GRADIENT;
 
   return (
     <section
-      ref={ref}
+      ref={sectionRef}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Aurora background */}
+      {/* Aurora background — each layer is a distinct color tone, cross-faded via opacity */}
       <div className="pointer-events-none absolute inset-0">
+        {/* Deep red */}
         <div
           className="absolute inset-0"
           style={{
-            background: [
-              "radial-gradient(ellipse at 15% 15%, rgba(90, 15, 18, 0.8) 0%, transparent 50%)",
-              "radial-gradient(ellipse at 85% 10%, rgba(12, 25, 65, 0.8) 0%, transparent 50%)",
-              "radial-gradient(ellipse at 10% 85%, rgba(70, 40, 8, 0.7) 0%, transparent 50%)",
-              "radial-gradient(ellipse at 85% 85%, rgba(8, 50, 45, 0.7) 0%, transparent 50%)",
-              "radial-gradient(ellipse at 50% 50%, rgba(45, 10, 55, 0.5) 0%, transparent 40%)",
-            ].join(", "),
-            backgroundSize: "400% 400%",
-            animation: "aurora 90s ease infinite",
-            willChange: "background-position",
+            background: "radial-gradient(ellipse 80% 70% at 30% 40%, rgba(120, 15, 15, 0.9) 0%, transparent 70%)",
+            animation: "aurora-fade 25s ease-in-out infinite",
           }}
         />
+        {/* Deep blue */}
         <div
-          className="absolute inset-0 opacity-80"
+          className="absolute inset-0"
           style={{
-            background: [
-              "radial-gradient(ellipse at 20% 20%, rgba(55, 15, 50, 0.6) 0%, transparent 45%)",
-              "radial-gradient(ellipse at 80% 25%, rgba(65, 30, 10, 0.5) 0%, transparent 45%)",
-              "radial-gradient(ellipse at 25% 80%, rgba(10, 35, 55, 0.5) 0%, transparent 45%)",
-              "radial-gradient(ellipse at 80% 80%, rgba(50, 10, 25, 0.5) 0%, transparent 45%)",
-            ].join(", "),
-            backgroundSize: "400% 400%",
-            animation: "aurora-secondary 110s ease infinite",
-            willChange: "background-position",
+            background: "radial-gradient(ellipse 70% 80% at 70% 30%, rgba(10, 25, 80, 0.9) 0%, transparent 70%)",
+            animation: "aurora-fade 25s ease-in-out infinite 5s",
           }}
         />
-
-        {/* Drifting fog accents */}
+        {/* Teal / green */}
         <div
-          className="absolute -right-[5%] top-[5%] h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle,rgba(100,60,180,0.07),transparent_60%)] blur-[100px]"
+          className="absolute inset-0"
           style={{
-            animation: "fog-drift-1 20s ease-in-out infinite",
-            willChange: "transform",
+            background: "radial-gradient(ellipse 75% 65% at 60% 70%, rgba(8, 60, 50, 0.85) 0%, transparent 70%)",
+            animation: "aurora-fade 25s ease-in-out infinite 10s",
           }}
         />
+        {/* Warm orange / amber */}
         <div
-          className="absolute -bottom-[10%] -left-[5%] h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(40,80,120,0.05),transparent_60%)] blur-[80px]"
+          className="absolute inset-0"
           style={{
-            animation: "fog-drift-2 25s ease-in-out infinite",
-            willChange: "transform",
+            background: "radial-gradient(ellipse 65% 75% at 25% 65%, rgba(90, 45, 8, 0.85) 0%, transparent 70%)",
+            animation: "aurora-fade 25s ease-in-out infinite 15s",
+          }}
+        />
+        {/* Deep violet */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "radial-gradient(ellipse 70% 70% at 50% 45%, rgba(50, 10, 65, 0.8) 0%, transparent 65%)",
+            animation: "aurora-fade 25s ease-in-out infinite 20s",
           }}
         />
       </div>
 
-      {/* Curved photo — entrance via CSS wrapper, mouse-tracked tilt via Framer Motion */}
+      {/* Drifting fog accents — transform-only, blur computed once */}
+      <div
+        className="pointer-events-none absolute -right-[5%] top-[5%] h-[800px] w-[800px] rounded-full bg-[radial-gradient(circle,rgba(100,60,180,0.07),transparent_60%)] blur-[100px]"
+        style={{
+          animation: "fog-drift-1 20s ease-in-out infinite",
+          willChange: "transform",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute -bottom-[10%] -left-[5%] h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(40,80,120,0.05),transparent_60%)] blur-[80px]"
+        style={{
+          animation: "fog-drift-2 25s ease-in-out infinite",
+          willChange: "transform",
+        }}
+      />
+
+      {/* Curved photo — entrance via CSS, mouse tilt via CSS transition */}
       <div
         className="relative z-10 w-[92vw] max-w-[1100px]"
         style={{
@@ -121,7 +124,10 @@ export function HeroSlide() {
           animation: "hero-card-in 1.6s cubic-bezier(0.21,0.47,0.32,0.98) both",
         }}
       >
-        <motion.div style={{ rotateX: rx, rotateY: ry }}>
+        <div
+          ref={cardRef}
+          style={{ transition: "transform 0.3s ease-out" }}
+        >
           <div
             className="relative mx-auto aspect-[16/10]"
             style={{ transform: `rotateZ(${TILT_Z}deg)` }}
@@ -155,7 +161,7 @@ export function HeroSlide() {
             {/* Paper edge */}
             <div className="pointer-events-none absolute inset-0 z-10 rounded-[20px] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" />
 
-            {/* Text overlay — CSS animations instead of Framer Motion for SSR safety */}
+            {/* Text overlay */}
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center sm:px-12">
               <span
                 className="mb-4 inline-flex items-center gap-2 text-[10px] tracking-[0.25em] text-white/50 uppercase sm:text-[11px]"
@@ -206,7 +212,7 @@ export function HeroSlide() {
             className="mx-auto mt-4 h-6 w-[70%] rounded-[50%] bg-black/30 blur-2xl"
             style={{ transform: `rotateZ(${TILT_Z}deg)` }}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

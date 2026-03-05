@@ -1,5 +1,6 @@
 @import "tailwindcss";
-@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts}";
+@source "../../node_modules/.pnpm/@heroui+theme@*/node_modules/@heroui/theme/dist/**/*.{js,ts,mjs}";
+@source inline("h-8 h-10 h-12 min-w-8 min-w-10 min-w-12 min-w-16 min-w-20 min-w-24 w-8 w-10 w-14 px-1 px-2 px-3 px-4 px-6 gap-2 gap-3 text-tiny text-small text-medium rounded-small rounded-medium rounded-large");
 @plugin "../../hero";
 
 @theme inline {
@@ -17,133 +18,42 @@
   }
 }
 
+/* Fog: transform-only (no opacity changes = blur computed once, GPU moves the texture) */
 @keyframes fog-drift-1 {
   0%, 100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.6;
   }
   33% {
     transform: translate(40px, -30px) scale(1.15);
-    opacity: 0.9;
   }
   66% {
     transform: translate(-30px, 20px) scale(0.9);
-    opacity: 0.4;
   }
 }
 
 @keyframes fog-drift-2 {
   0%, 100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.5;
   }
   50% {
     transform: translate(-35px, 30px) scale(1.2);
-    opacity: 0.8;
   }
 }
 
-@keyframes fog-drift-3 {
+/* Aurora: opacity cross-fade (GPU-composited, each gradient rendered once) */
+@keyframes aurora-fade {
   0%, 100% {
-    transform: translate(0, 0) scale(1);
     opacity: 0.4;
   }
-  40% {
-    transform: translate(20px, 15px) scale(1.1);
-    opacity: 0.7;
-  }
-  80% {
-    transform: translate(-15px, -20px) scale(0.95);
-    opacity: 0.3;
-  }
-}
-
-@keyframes orb-breathe {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.12);
+  33% {
     opacity: 1;
   }
-}
-
-@keyframes orb-drift {
-  0%, 100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(20px, -15px) rotate(2deg);
-  }
-  50% {
-    transform: translate(-10px, 20px) rotate(-1deg);
-  }
-  75% {
-    transform: translate(15px, 5px) rotate(1deg);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-@keyframes aurora {
-  0%, 100% {
-    background-position: 0% 0%;
-  }
-  12% {
-    background-position: 30% 10%;
-  }
-  25% {
-    background-position: 100% 0%;
-  }
-  37% {
-    background-position: 80% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  62% {
-    background-position: 50% 80%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-  87% {
-    background-position: 20% 50%;
-  }
-}
-
-@keyframes aurora-secondary {
-  0%, 100% {
-    background-position: 100% 100%;
-  }
-  16% {
-    background-position: 60% 80%;
-  }
-  33% {
-    background-position: 0% 100%;
-  }
-  50% {
-    background-position: 0% 0%;
-  }
   66% {
-    background-position: 50% 20%;
-  }
-  83% {
-    background-position: 100% 0%;
+    opacity: 0.2;
   }
 }
 
+/* Entrance animations */
 @keyframes hero-card-in {
   from {
     opacity: 0;
