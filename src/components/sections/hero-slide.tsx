@@ -104,9 +104,16 @@ export function HeroSlide() {
           ref={cardRef}
           style={{ transition: "transform 0.3s ease-out" }}
         >
+          {/* Gradient border wrapper */}
           <div
-            className="relative mx-auto aspect-[3/5] max-h-[calc(100svh-6rem)] overflow-hidden rounded-[14px] sm:aspect-[3/4] md:aspect-[16/10] md:max-h-none md:rounded-[20px]"
-            style={{ transform: `rotateZ(${TILT_Z}deg)` }}
+            className="relative mx-auto aspect-[3/5] max-h-[calc(100svh-6rem)] rounded-[17px] p-[3px] sm:aspect-[3/4] md:aspect-[16/10] md:max-h-none md:rounded-[23px]"
+            style={{
+              transform: `rotateZ(${TILT_Z}deg)`,
+              background: "linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.05) 40%, rgba(200,160,120,0.2) 70%, rgba(255,255,255,0.15) 100%)",
+            }}
+          >
+          <div
+            className="relative h-full w-full overflow-hidden rounded-[14px] md:rounded-[20px]"
           >
             {/* Photo with cover */}
             {PHOTO_SRC && (
@@ -124,9 +131,6 @@ export function HeroSlide() {
             <div className="pointer-events-none absolute inset-0 z-10 bg-black/40" />
             <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_40%_45%,transparent_10%,rgba(0,0,0,0.35)_100%)]" />
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
-
-            {/* Paper edge */}
-            <div className="pointer-events-none absolute inset-0 z-10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" />
 
             {/* Text overlay */}
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-5 text-center sm:px-12">
@@ -183,6 +187,7 @@ export function HeroSlide() {
                 </Button>
               </div>
             </div>
+          </div>
           </div>
 
           {/* Ground shadow */}

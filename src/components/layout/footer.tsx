@@ -8,13 +8,6 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function XIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -95,27 +88,15 @@ export function Footer() {
               {t("copyright", { year: String(year) })}
             </span>
 
-            {/* Social */}
-            <div className="flex items-center gap-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-white/70"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon className="h-4 w-4" />
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/40 transition-colors hover:text-white/70"
-                aria-label="X"
-              >
-                <XIcon className="h-4 w-4" />
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/eugene-dolgov-tech/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 transition-colors hover:text-white/70"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>

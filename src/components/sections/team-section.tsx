@@ -10,42 +10,43 @@ const TEAM = [
     roleKey: "member1Role",
     statusKey: "member1Status",
     busy: true,
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    photo: "/team/alex.png",
   },
   {
     nameKey: "member2Name",
     roleKey: "member2Role",
     statusKey: "member2Status",
     busy: true,
-    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
+    photo: "/team/lena.png",
   },
   {
     nameKey: "member3Name",
     roleKey: "member3Role",
     statusKey: "member3Status",
     busy: false,
-    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",
+    photo: "/team/eugene-sm.png",
   },
   {
     nameKey: "member4Name",
     roleKey: "member4Role",
     statusKey: "member4Status",
     busy: false,
-    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+    photo: "/team/anton.png",
   },
   {
     nameKey: "member5Name",
     roleKey: "member5Role",
     statusKey: "member5Status",
     busy: false,
-    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    photo: "/team/pavel.png",
   },
 ];
 
 const TECH_CATEGORIES = [
-  { key: "frontend", icons: ["React", "Next.js", "TypeScript", "Tailwind"] },
-  { key: "backend", icons: ["Node.js", "Python", "Go", "PostgreSQL"] },
-  { key: "cloud", icons: ["AWS", "Docker", "Kubernetes", "Terraform"] },
+  { key: "frontend", icons: ["React", "Next.js", "React Native", "Angular", "Tailwind", "TypeScript"] },
+  { key: "backend", icons: ["Node.js", "NestJS", "Python", "PostgreSQL", "MySQL", "MongoDB", "Redis", "GraphQL"] },
+  { key: "cloud", icons: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform", "CI/CD"] },
+  { key: "ai", icons: ["OpenAI", "Anthropic", "Google Gemini", "LangChain", "RAG", "AI Pipelines"] },
 ];
 
 export function TeamSection() {
@@ -118,12 +119,12 @@ export function TeamSection() {
                 transition: `opacity 0.6s ease ${0.2 + i * 0.1}s, transform 0.6s ease ${0.2 + i * 0.1}s`,
               }}
             >
-              <div className="relative mx-auto mb-4 h-24 w-24 overflow-hidden rounded-2xl border border-white/[0.06] sm:h-28 sm:w-28">
+              <div className="relative mx-auto mb-4 h-32 w-26 overflow-hidden rounded-2xl border border-white/[0.06] sm:h-36 sm:w-30">
                 <Image
                   src={member.photo}
                   alt={t(member.nameKey)}
                   fill
-                  sizes="(min-width: 640px) 112px, 96px"
+                  sizes="(min-width: 640px) 120px, 104px"
                   className="object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -143,11 +144,11 @@ export function TeamSection() {
         </div>
 
         {/* Technologies */}
-        <div className="mx-auto mt-20 max-w-3xl">
+        <div className="mx-auto mt-20 max-w-5xl">
           <h3 className="mb-8 text-center text-[11px] tracking-[0.25em] text-white/60 uppercase sm:text-xs">
             {t("techTitle")}
           </h3>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {TECH_CATEGORIES.map((cat) => (
               <div
                 key={cat.key}

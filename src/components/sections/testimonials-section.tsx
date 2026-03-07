@@ -6,18 +6,9 @@ import Image from "next/image";
 import { Star } from "lucide-react";
 
 const TESTIMONIALS = [
-  {
-    key: "t1",
-    photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    key: "t2",
-    photo: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=200&fit=crop&crop=face",
-  },
-  {
-    key: "t3",
-    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face",
-  },
+  { key: "t1", photo: "/customers/derek-m.avif" },
+  { key: "t2", photo: "/customers/felipe-a.jpeg" },
+  { key: "t3", photo: "/customers/lily-m.jpeg" },
 ];
 
 export function TestimonialsSection() {
@@ -113,10 +104,10 @@ export function TestimonialsSection() {
               <figcaption className="mt-6 flex items-center gap-3">
                 <Image
                   src={photo}
-                  alt=""
+                  alt={t(`${key}Name`)}
                   width={40}
                   height={40}
-                  className="rounded-full object-cover grayscale"
+                  className="h-10 w-10 shrink-0 rounded-full object-cover"
                 />
                 <div>
                   <p className="text-sm font-semibold text-white/80">

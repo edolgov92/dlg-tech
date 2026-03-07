@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 
-const FAQ_KEYS = ["faq1", "faq2", "faq3", "faq4", "faq5", "faq6"] as const;
+const FAQ_KEYS = ["faq1", "faq2", "faq3", "faq4", "faq6", "faq7", "faq8", "faq9"] as const;
 
 function AccordionItem({
   question,
