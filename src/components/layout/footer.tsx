@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -20,9 +21,12 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-3">
           {/* Brand */}
           <div>
-            <p className="text-base font-semibold tracking-tight text-white">
-              DLG Tech
-            </p>
+            <div className="flex items-center gap-2">
+              <Image src="/logos/dlg-tech.png" alt="DLG Tech" width={24} height={24} className="h-6 w-6" />
+              <p className="text-base font-semibold tracking-tight text-white">
+                DLG Tech
+              </p>
+            </div>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/40">
               {t("tagline")}
             </p>

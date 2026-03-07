@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@heroui/react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export function Header() {
   const t = useTranslations("header");
@@ -29,7 +30,8 @@ export function Header() {
       }}
     >
       <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-16">
-        <a href="/" className="text-sm font-semibold tracking-tight text-foreground/80">
+        <a href="/" className="flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground/80">
+          <Image src="/logos/dlg-tech.png" alt="DLG Tech" width={24} height={24} className="h-6 w-6" />
           DLG Tech
         </a>
         <Button
