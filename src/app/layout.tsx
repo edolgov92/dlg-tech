@@ -79,8 +79,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#09090b" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body
         className={`${instrumentSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} min-h-screen bg-background font-[family-name:var(--font-instrument-sans)] text-foreground antialiased`}
