@@ -115,16 +115,26 @@ export function HeroSlide() {
           <div
             className="relative h-full w-full overflow-hidden rounded-[14px] md:rounded-[20px]"
           >
-            {/* Photo with cover */}
+            {/* Photo with cover — mobile uses vertical crop */}
             {PHOTO_SRC && (
-              <Image
-                src={PHOTO_SRC}
-                alt="DLG Tech engineering team"
-                fill
-                priority
-                sizes="(min-width: 768px) 92vw, 100vw"
-                className="object-cover"
-              />
+              <>
+                <Image
+                  src="/team-mobile.webp"
+                  alt="DLG Tech engineering team"
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-cover md:hidden"
+                />
+                <Image
+                  src={PHOTO_SRC}
+                  alt="DLG Tech engineering team"
+                  fill
+                  priority
+                  sizes="92vw"
+                  className="hidden object-cover md:block"
+                />
+              </>
             )}
 
             {/* Photo darkening for text contrast */}
