@@ -6,28 +6,8 @@ import Image from "next/image";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
 
-const PHOTO_SRC: string | null = "/team.jpg";
-
-const STRIPS = 14;
-const CURVATURE = 16;
+const PHOTO_SRC: string | null = "/team.webp";
 const TILT_Z = -3;
-
-const strips = Array.from({ length: STRIPS }, (_, i) => {
-  const t = i / (STRIPS - 1);
-  const angle = -CURVATURE * Math.sin((t - 0.5) * Math.PI);
-  const w = 100 / STRIPS;
-
-  return {
-    left: `${i * w}%`,
-    width: `${w + 0.5}%`,
-    transform: `rotateY(${angle.toFixed(2)}deg)`,
-    backgroundPosition: `${(t * 100).toFixed(1)}% center`,
-    backgroundSize: `${STRIPS * 100}% auto`,
-  };
-});
-
-const PLACEHOLDER_GRADIENT =
-  "linear-gradient(145deg, #111827 0%, #0f172a 20%, #1e1b4b 45%, #172554 65%, #0c0a09 100%)";
 
 export function HeroSlide() {
   const t = useTranslations("hero");
@@ -48,8 +28,6 @@ export function HeroSlide() {
     if (el) el.style.transform = "rotateX(0deg) rotateY(0deg)";
   }, []);
 
-  const bgImage = PHOTO_SRC ? `url('${PHOTO_SRC}')` : PLACEHOLDER_GRADIENT;
-
   return (
     <section
       ref={sectionRef}
@@ -59,9 +37,8 @@ export function HeroSlide() {
       aria-label="Hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-10 md:px-0 md:py-0"
     >
-      {/* Aurora background — each layer is a distinct color tone, cross-faded via opacity */}
+      {/* Aurora background */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        {/* Deep red */}
         <div
           className="absolute inset-0"
           style={{
@@ -69,7 +46,6 @@ export function HeroSlide() {
             animation: "aurora-fade 25s ease-in-out infinite",
           }}
         />
-        {/* Deep blue */}
         <div
           className="absolute inset-0"
           style={{
@@ -77,7 +53,6 @@ export function HeroSlide() {
             animation: "aurora-fade 25s ease-in-out infinite 5s",
           }}
         />
-        {/* Teal / green */}
         <div
           className="absolute inset-0"
           style={{
@@ -85,7 +60,6 @@ export function HeroSlide() {
             animation: "aurora-fade 25s ease-in-out infinite 10s",
           }}
         />
-        {/* Warm orange / amber */}
         <div
           className="absolute inset-0"
           style={{
@@ -93,7 +67,6 @@ export function HeroSlide() {
             animation: "aurora-fade 25s ease-in-out infinite 15s",
           }}
         />
-        {/* Deep violet */}
         <div
           className="absolute inset-0"
           style={{
@@ -103,7 +76,7 @@ export function HeroSlide() {
         />
       </div>
 
-      {/* Drifting fog accents — transform-only, blur computed once */}
+      {/* Drifting fog accents */}
       <div
         className="pointer-events-none absolute -right-[5%] top-[5%] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(100,60,180,0.07),transparent_60%)] blur-[100px] sm:h-[800px] sm:w-[800px]"
         style={{
@@ -119,7 +92,7 @@ export function HeroSlide() {
         }}
       />
 
-      {/* Curved photo — entrance via CSS, mouse tilt via CSS transition */}
+      {/* Photo card — entrance via CSS, mouse tilt via CSS transition */}
       <div
         className="relative z-10 w-full max-w-[1100px] md:w-[92vw]"
         style={{
@@ -132,49 +105,28 @@ export function HeroSlide() {
           style={{ transition: "transform 0.3s ease-out" }}
         >
           <div
-            className="relative mx-auto aspect-[3/5] max-h-[calc(100svh-6rem)] sm:aspect-[3/4] md:aspect-[16/10] md:max-h-none"
+            className="relative mx-auto aspect-[3/5] max-h-[calc(100svh-6rem)] overflow-hidden rounded-[14px] sm:aspect-[3/4] md:aspect-[16/10] md:max-h-none md:rounded-[20px]"
             style={{ transform: `rotateZ(${TILT_Z}deg)` }}
           >
-            {/* Mobile: simple cover image */}
+            {/* Photo with cover */}
             {PHOTO_SRC && (
               <Image
                 src={PHOTO_SRC}
                 alt="DLG Tech engineering team"
                 fill
                 priority
-                sizes="100vw"
-                className="rounded-[14px] object-cover md:hidden"
+                sizes="(min-width: 768px) 92vw, 100vw"
+                className="object-cover"
               />
             )}
 
-            {/* Desktop: curved strips */}
-            <div
-              className="absolute inset-0 hidden overflow-hidden rounded-[20px] md:block"
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              {strips.map((s, i) => (
-                <div
-                  key={i}
-                  className="absolute top-0 h-full"
-                  style={{
-                    left: s.left,
-                    width: s.width,
-                    transform: s.transform,
-                    backgroundImage: bgImage,
-                    backgroundPosition: s.backgroundPosition,
-                    backgroundSize: `${STRIPS * 100}% 100%`,
-                  }}
-                />
-              ))}
-            </div>
-
             {/* Photo darkening for text contrast */}
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] bg-black/40 md:rounded-[20px]" />
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] bg-[radial-gradient(ellipse_at_40%_45%,transparent_10%,rgba(0,0,0,0.35)_100%)] md:rounded-[20px]" />
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] bg-gradient-to-b from-black/20 via-transparent to-black/40 md:rounded-[20px]" />
+            <div className="pointer-events-none absolute inset-0 z-10 bg-black/40" />
+            <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_at_40%_45%,transparent_10%,rgba(0,0,0,0.35)_100%)]" />
+            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-black/20 via-transparent to-black/40" />
 
             {/* Paper edge */}
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[14px] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)] md:rounded-[20px]" />
+            <div className="pointer-events-none absolute inset-0 z-10 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]" />
 
             {/* Text overlay */}
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-5 text-center sm:px-12">
