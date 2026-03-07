@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-const SITE_URL = "https://dlgtech.com";
+const SITE_URL = "https://dlgtech.io";
 
 function BreadcrumbJsonLd({ title, path }: { title: string; path: string }) {
   const schema = {

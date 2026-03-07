@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dlgtech.com"),
+  metadataBase: new URL("https://dlgtech.io"),
   title: {
     default: "DLG Tech — Architect-Founded Engineering Team",
     template: "%s — DLG Tech",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     "startup engineering team",
     "DLG Tech",
   ],
-  authors: [{ name: "Eugene Dolgov", url: "https://dlgtech.com" }],
+  authors: [{ name: "Eugene Dolgov", url: "https://dlgtech.io" }],
   creator: "DLG Tech",
   publisher: "DLG Tech",
   formatDetection: { telephone: false },

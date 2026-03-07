@@ -79,7 +79,7 @@ export function FinalCTASection() {
           </Button>
           <Button
             as="a"
-            href="mailto:contact@dlgtech.com"
+            href="mailto:contact@dlgtech.io"
             size="lg"
             radius="full"
             className="border-2 border-white/40 bg-transparent px-10 font-semibold text-white hover:bg-white/10"

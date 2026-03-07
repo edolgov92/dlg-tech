@@ -124,7 +124,7 @@ export default function TwitterImage() {
           }}
         >
           <span style={{ fontSize: "15px", color: "rgba(255, 255, 255, 0.3)" }}>
-            dlgtech.com
+            dlgtech.io
           </span>
           <span style={{ fontSize: "15px", color: "rgba(255, 255, 255, 0.3)" }}>
             14+ years · EU &amp; US · Architecture-first

@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-const SITE_URL = "https://dlgtech.com";
+const SITE_URL = "https://dlgtech.io";
 
 function buildOrganizationSchema() {
   return {
@@ -9,7 +9,7 @@ function buildOrganizationSchema() {
     name: "DLG Tech",
     legalName: "Evgenii Dolgov PR Novi Sad",
     url: SITE_URL,
-    email: "contact@dlgtech.com",
+    email: "contact@dlgtech.io",
     foundingDate: "2024",
     founder: {
       "@type": "Person",

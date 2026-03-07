@@ -13,7 +13,7 @@ export default function TermsOfServicePage() {
       <p>
         These Terms of Service (&quot;Terms&quot;) govern your access to and use
         of the website at{" "}
-        <a href="https://dlgtech.com">dlgtech.com</a> (the &quot;Site&quot;)
+        <a href="https://dlgtech.io">dlgtech.io</a> (the &quot;Site&quot;)
         and the software engineering services (the &quot;Services&quot;) provided
         by <strong>Evgenii Dolgov PR Novi Sad</strong>, operating as{" "}
         <strong>DLG Tech</strong> (&quot;we&quot;, &quot;us&quot;, or
@@ -409,7 +409,7 @@ export default function TermsOfServicePage() {
       <p>
         All formal notices under these Terms shall be in writing and sent by
         email. Notices to DLG Tech shall be sent to{" "}
-        <a href="mailto:contact@dlgtech.com">contact@dlgtech.com</a>. Notices
+        <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>. Notices
         to you shall be sent to the email address provided in the applicable
         SOW or, for Site-related matters, posted on the Site. Notices are deemed
         received on the business day following the date of sending.
@@ -432,7 +432,7 @@ export default function TermsOfServicePage() {
       <ul>
         <li>
           <strong>Email:</strong>{" "}
-          <a href="mailto:contact@dlgtech.com">contact@dlgtech.com</a>
+          <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>
         </li>
         <li>
           <strong>Entity:</strong> Evgenii Dolgov PR Novi Sad, Republic of Serbia

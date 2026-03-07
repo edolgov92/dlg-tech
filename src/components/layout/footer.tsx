@@ -40,10 +40,10 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:contact@dlgtech.com"
+                  href="mailto:contact@dlgtech.io"
                   className="text-sm text-white/40 transition-colors hover:text-white/80"
                 >
-                  contact@dlgtech.com
+                  contact@dlgtech.io
                 </a>
               </li>
               <li>

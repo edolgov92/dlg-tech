@@ -151,7 +151,7 @@ export default function OgImage() {
               color: "rgba(255, 255, 255, 0.3)",
             }}
           >
-            dlgtech.com
+            dlgtech.io
           </span>
           <span
             style={{
