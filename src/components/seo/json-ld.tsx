@@ -88,8 +88,10 @@ export async function JsonLd({ locale }: { locale: string }) {
     { q: tFaq("faq2Q"), a: tFaq("faq2A") },
     { q: tFaq("faq3Q"), a: tFaq("faq3A") },
     { q: tFaq("faq4Q"), a: tFaq("faq4A") },
-    { q: tFaq("faq5Q"), a: tFaq("faq5A") },
     { q: tFaq("faq6Q"), a: tFaq("faq6A") },
+    { q: tFaq("faq7Q"), a: tFaq("faq7A") },
+    { q: tFaq("faq8Q"), a: tFaq("faq8A") },
+    { q: tFaq("faq9Q"), a: tFaq("faq9A") },
   ];
 
   const faqSchema = {
