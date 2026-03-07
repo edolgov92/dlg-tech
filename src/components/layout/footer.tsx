@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { CALENDLY_URL, CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/constants";
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -40,15 +41,15 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="mailto:contact@dlgtech.io"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="text-sm text-white/40 transition-colors hover:text-white/80"
                 >
-                  contact@dlgtech.io
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>
                 <a
-                  href="https://calendly.com"
+                  href={CALENDLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-white/40 transition-colors hover:text-white/80"
@@ -93,7 +94,7 @@ export function Footer() {
             </span>
 
             <a
-              href="https://www.linkedin.com/in/eugene-dolgov-tech/"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 transition-colors hover:text-white/70"

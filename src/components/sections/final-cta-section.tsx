@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL, CONTACT_EMAIL } from "@/lib/constants";
 
 export function FinalCTASection() {
   const t = useTranslations("finalCta");
@@ -67,7 +68,7 @@ export function FinalCTASection() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-5">
           <Button
             as="a"
-            href="https://calendly.com"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
@@ -79,7 +80,7 @@ export function FinalCTASection() {
           </Button>
           <Button
             as="a"
-            href="mailto:contact@dlgtech.io"
+            href={`mailto:${CONTACT_EMAIL}`}
             size="lg"
             radius="full"
             className="border-2 border-white/40 bg-transparent px-10 font-semibold text-white hover:bg-white/10"

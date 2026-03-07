@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout } from "@/components/layout/legal-layout";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Terms of Service — DLG Tech",
@@ -409,7 +410,7 @@ export default function TermsOfServicePage() {
       <p>
         All formal notices under these Terms shall be in writing and sent by
         email. Notices to DLG Tech shall be sent to{" "}
-        <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>. Notices
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Notices
         to you shall be sent to the email address provided in the applicable
         SOW or, for Site-related matters, posted on the Site. Notices are deemed
         received on the business day following the date of sending.
@@ -432,7 +433,7 @@ export default function TermsOfServicePage() {
       <ul>
         <li>
           <strong>Email:</strong>{" "}
-          <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </li>
         <li>
           <strong>Entity:</strong> Evgenii Dolgov PR Novi Sad, Republic of Serbia

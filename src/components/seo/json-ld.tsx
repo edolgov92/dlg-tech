@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
-
-const SITE_URL = "https://dlgtech.io";
+import { SITE_URL, CONTACT_EMAIL, LINKEDIN_URL } from "@/lib/constants";
 
 function buildOrganizationSchema() {
   return {
@@ -9,7 +8,7 @@ function buildOrganizationSchema() {
     name: "DLG Tech",
     legalName: "Evgenii Dolgov PR Novi Sad",
     url: SITE_URL,
-    email: "contact@dlgtech.io",
+    email: CONTACT_EMAIL,
     foundingDate: "2024",
     founder: {
       "@type": "Person",
@@ -21,10 +20,7 @@ function buildOrganizationSchema() {
       addressLocality: "Novi Sad",
       addressCountry: "RS",
     },
-    sameAs: [
-      "https://linkedin.com/company/dlgtech",
-      "https://x.com/dlgtech",
-    ],
+    sameAs: [LINKEDIN_URL],
   };
 }
 

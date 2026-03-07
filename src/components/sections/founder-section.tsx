@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@heroui/react";
 import { ArrowRight, ShieldCheck, DollarSign, Blocks } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/constants";
 
 const POINTS = [
   { key: "point1", icon: ShieldCheck },
@@ -165,7 +166,7 @@ export function FounderSection() {
         <div className="mt-16 text-center">
           <Button
             as="a"
-            href="https://calendly.com"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             size="lg"

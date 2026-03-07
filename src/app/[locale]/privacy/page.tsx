@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalLayout } from "@/components/layout/legal-layout";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — DLG Tech",
@@ -35,7 +36,7 @@ export default function PrivacyPolicyPage() {
         <li><strong>Country:</strong> Republic of Serbia</li>
         <li>
           <strong>Email:</strong>{" "}
-          <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </li>
       </ul>
       <p>
@@ -53,7 +54,7 @@ export default function PrivacyPolicyPage() {
           <strong>Contact information</strong> — name, email address, company
           name, phone number (if provided), and any details you share when
           emailing us at{" "}
-          <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a> or
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> or
           booking a call through our scheduling tool.
         </li>
         <li>
@@ -348,7 +349,7 @@ export default function PrivacyPolicyPage() {
         We will respond to your request within <strong>30 days</strong>. In
         complex cases, we may extend this by an additional 60 days, with prior
         notice. To exercise any of these rights, email us at{" "}
-        <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>. We may
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We may
         ask you to verify your identity before processing your request.
       </p>
       <p>
@@ -402,7 +403,7 @@ export default function PrivacyPolicyPage() {
       </p>
       <p>
         To submit a request, email{" "}
-        <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>. We will
+        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We will
         verify your identity and respond within 45 days.
       </p>
 
@@ -486,7 +487,7 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>
           <strong>Email:</strong>{" "}
-          <a href="mailto:contact@dlgtech.io">contact@dlgtech.io</a>
+          <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
         </li>
         <li>
           <strong>Entity:</strong> Evgenii Dolgov PR Novi Sad, Republic of Serbia

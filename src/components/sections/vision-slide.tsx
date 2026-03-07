@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/constants";
 
 export function VisionSlide() {
   const t = useTranslations("vision");
@@ -77,7 +78,7 @@ export function VisionSlide() {
         <div className="mt-14">
           <Button
             as="a"
-            href="https://calendly.com"
+            href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
