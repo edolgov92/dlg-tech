@@ -82,6 +82,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body
         className={`${instrumentSans.variable} ${spaceGrotesk.variable} ${geistMono.variable} min-h-screen bg-background font-[family-name:var(--font-instrument-sans)] text-foreground antialiased`}
+        style={{
+          display: "none",
+        }}
       >
         {children}
       </body>
